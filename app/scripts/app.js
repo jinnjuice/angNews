@@ -7,12 +7,28 @@ var app = angular.module('angNewsApp', [
     'ngSanitize',
     'ngRoute',
     'firebase'
-]);
+    ]);
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/posts.html',
             controller: 'PostsController'
+        })
+        .when('/posts/:postId', {
+            templateUrl: 'views/showpost.html',
+            controller: 'PostViewController'
+        })
+        .when('/register', {
+            templateUrl: 'views/register.html',
+            controller: 'AuthController'
+        })
+        .when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'AuthController'
+        })
+        .when('/users/:username', {
+            templateUrl: 'views/profile.html',
+            controller: 'ProfileController'
         })
         .otherwise({
             redirectTo: '/'
