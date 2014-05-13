@@ -9,11 +9,16 @@
         <div class="col-md-9 col-xs-11">
 
             <div class="info">
+                <a href="{{ post.url }}">
+                    {{ post.title }}
+                    <span class="url">({{ post.url | hostnameFromUrl }})</span>
+                </a>
+            </div>
+            <div>
                 <span>{{ post.score || 0 }} votes</span>
                 &mdash;
-
                 <span>submitted by <a href="#/users/{{ post.owner }}">{{ post.owner }}</a></span>
-                -
+                &mdash;
                 <a href="#/posts/{{ postId }}">comments</a>
                 <a ng-click="deletePost(postId)">delete</a>
             </div>

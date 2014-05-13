@@ -1,5 +1,5 @@
-/* global app:true */
 'use strict';
+/* global app:true */
 
 var app = angular.module('angNewsApp', [
     'ngCookies',
@@ -8,6 +8,7 @@ var app = angular.module('angNewsApp', [
     'ngRoute',
     'firebase'
     ]);
+
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
