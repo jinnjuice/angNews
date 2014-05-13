@@ -5,8 +5,9 @@ var app = angular.module('angNewsApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
-])
+    'ngRoute',
+    'firebase'
+]);
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
@@ -16,5 +17,6 @@ app.config(function ($routeProvider) {
         .otherwise({
             redirectTo: '/'
         });
-});
+})
+.constant('FIREBASE_URL', 'https://glowing-fire-3897.firebaseio.com/');
 
